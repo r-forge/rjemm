@@ -1,0 +1,11 @@
+Package: RJEMM
+Version: 0.0
+Date: 2009-05-06
+Title: R Implementation of Java Extensible Markov Models
+Author: Benjamin Koopferstock <bkoopfer@smu.edu>.
+Maintainer: Benjamin Koopferstock <bkoopfer@smu.edu>
+Depends: R (>= 2.0.0), rJava (>= 0.6-0), graph, Rgraphviz
+Description: JREMM is a package that implements Extensible Markov Models.  This packages uses rJava to connect with the java implementation of EMM (JEMM), and can load models created in JEMM and vice versa.
+License: GPL 
+
+
