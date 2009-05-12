@@ -22,8 +22,8 @@ detectEvent(JEMM, newdata, measure = "Cosine", threshold = 0.2)
 \examples{
 library(RJEMM)
 data(anomaly)
-emm <- create_EMM(measure = "Dice", threshold = 0.5, )
+emm <- create_EMM(measure = "Dice", threshold = 0.3 )
 build( emm, anomaly)
 data(anomalyRare)
-detectEvent(emm, anomalyRare, "Dice", 0.9)
+detectEvent(emm, anomalyRare, "Dice")
 }

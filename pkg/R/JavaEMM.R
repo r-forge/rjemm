@@ -30,12 +30,12 @@ detectEvent <- function(JEMM, newdata, measure="Cosine", threshold=0.2 ){
 	simMeasure <- .jnew("java/lang/String", measure)
 	threshold <- .jnew("java/lang/Double",threshold)
 	dataMatrix <- as.matrix(rbind(newdata))	
+	EMMDetect <- .jnew("jemm/EMMDetection", simMeasure, threshold)
 	for(i in 1:nrow(dataMatrix)){
 		vectorToAdd <- as.double(as.vector(dataMatrix[i,]))
+		.jcall(EMMDetect, "V", "detectEvent", JEMM$EMM, vectorToAdd )
 	}  	
-	EMMDetect <- .jnew("jemm/EMMDetection", simMeasure, threshold)
-	.jcall(EMMDetect, "V", "detectEvent", JEMM$EMM, vectorToAdd )
-	.jcall(JEMM$EMM, "S", "printRareStateString")
+	.jcall(JEMM$EMM, "V", "printRareStateString")
 }
 
 
